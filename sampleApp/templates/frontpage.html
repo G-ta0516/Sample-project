@@ -1,12 +1,519 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello OPPAI</h1>
-    <a href=""></a>
-</body>
-</html>
+<html lang="ja"><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=11;IE=Edge">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="ITCS Co. Ltd.">
+	<meta name="description" content="">
+	<meta name="robots" content="noindex,nofollow">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<link rel="shortcut icon" type="favicon.ico" href="image/tb/favicon.ico">
+	<title>Manage OZO3</title>
+	<link rel="stylesheet" href="/tb/image/tb/login/login.css" type="text/css" media="all">
+	
+	
+	<style type="text/css">
+	<!--
+	
+		/* **********************************************************************************************************************************************
+		        599px以下（スマホ用）
+		********************************************************************************************************************************************** */
+		@media (max-width: 599px) {
+	
+			html {
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+				background:#3f85b1 url(/tb/image/tb/login/sp/bg_sp.jpg?3.30.1) no-repeat center top;
+				-moz-background-size:100% auto ;
+				background-size: 100% auto;
+			}
+	
+			#login-box-left {
+				width:100%;
+				padding-top:35.71875%;
+			}
+	
+			#login-box-left h1 {
+				font-size: 0;
+				line-height: 0;
+				text-indent: -9999px;
+				list-style-type: none;
+				height: 0;
+				overflow: hidden;
+			}
+	
+			#login-box-right {
+				background:#FFF;
+				width:84.375%;
+				margin:auto;
+				border-radius:6px;
+				padding:15px 0;
+				box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.1);
+			}
+	
+			#login-box-right-inner {
+				width:88.8888888%;
+				margin:auto;
+			}
+			#login-box-right-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.0;
+			}
+	
+			#login-name {
+				background: #FFF url(/tb/image/tb/login/name.png) no-repeat 12px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:2px 2px 0 0;
+				width:100%;
+				height:42px;
+				padding:0 0 0 44px;
+			}
+			#login-password {
+				background:#fff url(/tb/image/tb/login/password.png) no-repeat 15px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:0 0 2px 2px;
+				width:100%;
+				height:42px;
+				margin:-1px 0 20px;
+				padding:0 0 0 44px;
+			}
+			#login-btn {
+				background:#4fa6dd;
+				color:#fff;
+				font-size:12px;
+				line-height:36px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border-radius:6px;
+				border:1px solid #3e99bd;
+				box-shadow: 2px 3px 0px 2px rgba(0,0,0,0.1);
+				width:100%;
+				height:36px;
+			}
+	
+			#login-info {
+				width:70.0%;
+				position:absolute;
+				/*top:80.0%;*/
+				left:15.0%;
+				background:#FFF;
+				margin:auto;
+				border-radius:6px;
+				box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.1);
+	
+			}
+			#login-info-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.5;
+				margin-left:10px;
+			}
+			#err-font{
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+				color:red;
+				font-size:12px;
+			}
+	
+		}
+	
+		/* **********************************************************************************************************************************************
+		        600～768px以下（タブレット用＠ipad含む）
+		********************************************************************************************************************************************** */
+		@media (min-width: 600px) and (max-width: 768px) {
+			html {
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+				background:#3f85b1 url(/tb/image/tb/login/tb/bg_tb.jpg?3.30.1) no-repeat center top;
+				-moz-background-size:100% auto ;
+				background-size: 100% auto;
+			}
+			#login-box-left {
+				width:100%;
+				padding-top:37.4895833%;
+			}
+			#login-box-left h1 {
+				font-size: 0;
+				line-height: 0;
+				text-indent: -9999px;
+				list-style-type: none;
+				height: 0;
+				overflow: hidden;
+			}
+			#login-box-right {
+				background:#FFF;
+				width:44.921875%;
+				margin:auto;
+				border-radius:6px;
+				padding:30px 0;
+				box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.1);
+			}
+	
+			#login-box-right-inner {
+				width:89.5652173%;
+				margin:auto;
+			}
+			#login-box-right-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.5;
+			}
+			#login-name {
+				background: #FFF url(/tb/image/tb/login/name.png) no-repeat 12px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:2px 2px 0 0;
+				width:100%;
+				height:42px;
+				padding:0 0 0 44px;
+			}
+			#login-password {
+				background:#fff url(/tb/image/tb/login/password.png) no-repeat 15px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:0 0 2px 2px;
+				width:100%;
+				height:42px;
+				margin:-1px 0 20px;
+				padding:0 0 0 44px;
+			}
+			#login-btn {
+				background:#4fa6dd;
+				color:#fff;
+				font-size:12px;
+				line-height:36px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border-radius:6px;
+				border:1px solid #3e99bd;
+				box-shadow: 2px 3px 0px 2px rgba(0,0,0,0.1);
+				width:100%;
+				height:36px;
+			}
+	
+			#login-info {
+				width:45.0%;
+				position:absolute;
+				/*top:75.5%;*/
+				left:27.5%;
+				background:#FFF;
+				margin:auto;
+				border-radius:6px;
+				box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.1);
+	
+			}
+			#login-info-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.5;
+				margin-left:10px;
+			}
+			#err-font{
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+				color:red;
+				font-size:12px;
+			}
+	
+		}
+	
+	
+		/* **********************************************************************************************************************************************
+		       769px以上
+		********************************************************************************************************************************************** */
+		@media (min-width: 769px) {
+	
+			html,
+			body {
+				height:100%;
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+			}
+	
+			#container {
+				height:100%;
+			}
+	
+			#login-box {
+				background:url(/tb/image/tb/login/pc/bg_pc.jpg?3.30.1) no-repeat center top;
+				-moz-background-size:auto 100%;
+				background-size: auto 100%;
+				width:100%;
+				height:100%;
+			}
+			#login-box-inner {
+				width:100%;
+				height:100%;
+				margin:auto;
+			}
+			#login-box-left {
+				float:left;
+				width:64.2857142%;
+				height:100%;
+				position:relative;
+			}
+			#login-box-left h1 {
+				font-size: 0;
+				line-height: 0;
+				text-indent: -9999px;
+				list-style-type: none;
+				height: 0;
+				overflow: hidden;
+			}
+			#login-box-right {
+				float:left;
+				width:35.7142857%;
+				height:100%;
+				position:relative;
+			}
+			#login-box-right-inner {
+				width:240px;
+				position:absolute;
+				top:26.5%;
+				left:66px;
+			}
+			#login-box-right-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.5;
+			}
+			#login-name {
+				background: #FFF url(/tb/image/tb/login/name.png) no-repeat 12px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:2px 2px 0 0;
+				width:100%;
+				height:42px;
+				padding:0 0 0 44px;
+			}
+			#login-password {
+				background:#fff url(/tb/image/tb/login/password.png) no-repeat 15px 13px;
+				font-size:12px;
+				line-height:42px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border:1px solid #e5e5e5;
+				border-radius:0 0 2px 2px;
+				width:100%;
+				height:42px;
+				margin:-1px 0 20px;
+				padding:0 0 0 44px;
+			}
+			#login-btn {
+				background:#4fa6dd;
+				color:#fff;
+				font-size:12px;
+				line-height:36px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border-radius:6px;
+				border:1px solid #3e99bd;
+				box-shadow: 2px 3px 2px 2px rgba(0,0,0,0.1);
+				width:100%;
+				height:36px;
+			}
+	
+			#login-info {
+				width:43.0%;
+				position:absolute;
+				top:68.5%;
+				left:35.0%;
+	
+				background:#FFF;
+				margin:auto;
+				border-radius:6px;
+				box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.1);
+	
+			}
+			#login-info-text {
+				color:#535353;
+				font-size:12px;
+				line-height:1.5;
+				margin-left:10px;
+			}
+			#err-font{
+				font-family: "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, sans-serif;
+				color:red;
+				font-size:12px;
+			}
+	
+		}
+	
+	-->
+	</style>
+	
+	<script type="text/javascript" src="/tb/md5.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="/tb/sha.js" charset="UTF-8"></script>
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+	function SHA512(text) {
+    	var sha512 = new jsSHA('SHA-512', 'TEXT');
+	    sha512.update(text);
+    	return sha512.getHash('HEX');
+	}
+	
+	function doChallengeResponse(){
+		document.login.LoginBtn.disabled = true;
+		
+			document.login.response.value = MD5(document.login.LoginUserID.value + ":" + MD5(document.login.LoginPassword.value) + ":" + document.login.challenge.value);
+		
+		
+		document.login.response512.value = SHA512(document.login.LoginUserID.value + ":" + SHA512(document.login.LoginPassword.value) + ":" + document.login.challenge.value);
+		
+		document.login.LoginPassword.value = "";
+	
+	}
+	//-->
+	</script>
+	
+	</head>
+	
+	<body id="login-index">
+	
+	<div id="container">
+		<div id="login-box">
+			<div id="login-box-inner" class="clearfix">
+				<div id="login-box-left">
+					<h1>Manage OZO3</h1>
+				</div>
+				<div id="login-box-right">
+					<div id="login-box-right-inner">
+						<p id="login-box-right-text">Manage OZO3　へようこそ<br>ユーザーIDとパスワードを入力して下さい</p>
+	
+							<form name="login" method="POST" action="/tb/default.cfm?version=tb" onsubmit="doChallengeResponse();">
+								<input type="hidden" name="response512" value="">
+								<input type="hidden" name="challenge" value="3e439733a70e6692e4e976a0387b7254">
+								<input type="hidden" name="response" value="">
+								<input type="hidden" name="EncriptResponse" value="">
+	
+								
+								
+	
+								<input value="" name="LoginUserID" size="30" maxlength="32" type="text" placeholder="ユーザID" id="login-name"><br>
+								<input name="LoginPassword" size="30" maxlength="100" type="password" placeholder="パスワード" id="login-password">
+	
+								
+								
+	
+								<input name="LoginBtn" value="ログイン" type="submit" id="login-btn">
+	
+								
+								
+	
+							</form>
+					</div>
+				</div>
+	
+				
+				
+					<br>
+					<div id="login-info">
+						
+						<div id="login-info-text">
+								<p>7/3（月）にて開催された創立35周年記念朝礼の録画配信を実施しております。<br>詳しくは掲示板をご確認ください。<br></p></div>
+						
+					</div>
+				
+	
+			</div>
+		</div>
+	</div>
+	
+	
+	<footer id="footer">
+		<p>ManageOZO3 3.30.1 © 2023 ITCS Co. Ltd.</p>
+	</footer>
+	
+	
+	
+	
+	
+	<script type="text/JavaScript">
+	<!--
+	function getCookie(key) {
+		tmp = document.cookie + ";";
+		tmp1 = tmp.indexOf(key, 0);
+		if(tmp1 != -1){
+			tmp = tmp.substring(tmp1, tmp.length);
+			start = tmp.indexOf("=", 0)+1;
+			end = tmp.indexOf(";", start);
+			return (unescape(tmp.substring(start, end)));
+		}
+		return("");
+	}
+	function setCookie(key, val) {
+		tmp = key + "=" + escape(val) + ";";
+		tmp += "expires=Fri,31-Dec-2030 23:59:59; ";
+		document.cookie = tmp;
+	}
+	
+	window.onload = function(){
+		
+		
+		if (document.login.LoginUserID.value == '') {
+			document.login.LoginUserID.focus();
+		} else {
+			document.login.LoginPassword.focus();
+		}
+	}
+	
+	//-->
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript" src="/tb/jscript/jquery.noty.js?3.30.1"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var jqNotify = $('#header');
+
+			
+			
+
+			jqNotify.noty({
+				text : '<b>お使いのブラウザは ManageOZO3動作対象外のブラウザとなります。</b><br>Microsoft Internet Explorer 10/11、または <a href="http://www.mozilla.jp/business/downloads/">Mozilla Firefox ESR</a> をご使用下さい。',
+				layout: 'inline',
+				type : 'warning',
+				closeWith: ['click'],
+				callback: {
+					afterClose: function() {
+						
+						
+					}
+				}
+			});
+		});
+	</script>
+	</body></html>
