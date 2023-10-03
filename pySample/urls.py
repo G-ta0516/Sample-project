@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from sampleApp.views import frontpage
+from sampleApp.views import frontpage1
 from sampleApp.views import registerpage
+from sampleApp.views import submit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path("",frontpage)
-    path("",registerpage)
+    path("",frontpage1),
+    path('registerpage',registerpage,name="registerpage"),
+    path('submit',submit,name="submit")
 ]
