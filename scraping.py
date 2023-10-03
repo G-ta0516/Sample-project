@@ -18,8 +18,22 @@ def GetURANAi(URL,Constellation,Detail):
 # GetURANAi('https://fortune.line.me/contents/horoscope/','zodiac-item_name__c4Ypu','zodiac-item_summary__E_Vh7')
 
 URLList = [
+   
+    [
+    # RSK山陽放送
+    ['https://www.sumo.or.jp/Fortune','uranai_rank ribbon-number1','uranai_desc']
+    # RSK山陽放送
+    ,['https://www.rsk.co.jp/horoscope/','uranai_rank ribbon-number1','uranai_desc']
+    # RSK山陽放送
+    ,['https://www.rsk.co.jp/horoscope/','uranai_rank ribbon-number1','uranai_desc']
+    # リンネル
+    ,['https://liniere.jp/column/lifestyle/36333/','p-article-post-col-data__title','p-article-post-col-data__text']
+    # テレ朝
+    ,['https://www.tv-asahi.co.jp/goodmorning/uranai/','seiza-ttl','read-area']
+    # Ameba
+    ,['https://amb-uranai.ameba.jp/fortune/zodiac/','nonmemberZodiacList__name','nonmemberZodiacList__message']
     # LINE
-    ['https://fortune.line.me/contents/horoscope/','zodiac-item_name__c4Ypu','zodiac-item_summary__E_Vh7']
+    ,['https://fortune.line.me/contents/horoscope/','zodiac-item_name__c4Ypu','zodiac-item_summary__E_Vh7']
     # 占いの泉
     ,['https://izumi.uranai.jp/unsei','topSeizaName','seizaRstTxt']
     # 家庭画報
@@ -33,7 +47,7 @@ URLList = [
 # print(URLList[0])
 
 # GetURANAi('https://fortune.line.me/contents/horoscope/','zodiac-item_name__c4Ypu','zodiac-item_summary__E_Vh7')
-GetURANAi(*URLList[0])
+# GetURANAi(*URLList[0])
 
 # for num in URLList(5):
 #     GetURANAi(*URLList[num])
